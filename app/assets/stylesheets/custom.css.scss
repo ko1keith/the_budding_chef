@@ -1,1 +1,22 @@
+$navbar: black;
+
 @import 'bootstrap/dist/css/bootstrap';
+
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-custom {
+    background-color: lightgreen;
+}
