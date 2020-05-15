@@ -2,6 +2,9 @@ $navbar: black;
 
 @import 'bootstrap/dist/css/bootstrap';
 
+.center{
+  text-align: center;
+}
 
 #logo {
   float: left;
@@ -19,4 +22,14 @@ $navbar: black;
 
 .navbar-custom {
     background-color: lightgreen;
+}
+
+.jumbotron{
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+  background-image: url(kfc.jpg);
+  background-size: cover;
+  color: white;
 }
