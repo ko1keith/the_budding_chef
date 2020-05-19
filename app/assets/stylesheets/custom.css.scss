@@ -1,6 +1,7 @@
-$navbar: black;
 
 @import 'bootstrap/dist/css/bootstrap';
+
+$navbar: black;
 
 .center{
   text-align: center;
@@ -21,7 +22,7 @@ $navbar: black;
 }
 
 .navbar-custom {
-    background-color: lightgreen;
+    background-color: brown;
 }
 
 .jumbotron{
@@ -32,4 +33,22 @@ $navbar: black;
   background-image: url(kfc.jpg);
   background-size: cover;
   color: white;
+}
+
+.jumbotron h1, h2{
+  font-weight: bold;
+}
+
+.btn-xlarge{
+  background-color: brown;
+}
+
+
+.footer{
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: brown;
 }
