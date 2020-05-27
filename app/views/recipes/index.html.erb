@@ -1,1 +1,9 @@
-<h1>Index Page</h1>
+<h1>Listing all Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+
+  <h4><%= recipe.name %></h4>
+  <h4><%= recipe.description %></h4>
+  <small><%= time_ago_in_words(recipe.created_at) %></small>
+
+<% end %>
