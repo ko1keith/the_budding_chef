@@ -1,7 +1,17 @@
 <%= render "shared/page_title", title: "Create a new recipe" %>
 
-<div class="row ">
-  <div class="col-md-12 center">
+<% if @recipe.errors.any? %>
+  <%= pluralize(@recipe.errors.count, "error")%>
+  prohibited this <%= @recipe.class %> from being saved:
+  <ul>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
     <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
       <div class="row form-group">
         <%= f.label :name, :class => 'control-label col-md-2 ' %>
@@ -9,7 +19,6 @@
           <%= f.text_field :name, class: "form-control", placeholder: "Name of recipe", autofocus: true %>
         </div>
       </div>
-
       <div class="row form-group">
         <%= f.label :description, :class => 'control-label col-md-2' %>
         <div class="col-md-8">
@@ -18,8 +27,8 @@
       </div>
 
       <div class="row form-group">
-        <div class="col-md-6">
-          <%= f.submit class: "btn btn-primary btn-lg btn-xlarge" %>
+        <div class="col-md-4">
+          <%= f.submit class: "btn btn-primary btn-lg btn-xlarge float-right" %>
         </div>
       </div>
     <% end %>
