@@ -7,8 +7,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
 
   def setup
     @chef = Chef.create!(chefname: "keith", email:"keith@example.com")
-    @recipe = Recipe.create(name: "vegie sautee", description:"greate vegie sautee, add vegie and oil", chef: @chef)
-    @recipe2 = @chef.recipes.build(name: "chicken sautee", description:"great chicken dish")
+    @recipe = Recipe.create(name: "Vegie sautee", description:"greate vegie sautee, add vegie and oil", chef: @chef)
+    @recipe2 = @chef.recipes.build(name: "Chicken sautee", description:"great chicken dish")
     @recipe2.save
   end
 
@@ -20,7 +20,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   test "should get recipes listing" do
     get recipes_path
     assert_template 'recipes/index'
-    assert_select "a[href=?]", recipe_path(@recipe), text: @recipe.name 
+    assert_select "a[href=?]", recipe_path(@recipe), text: @recipe.name
     assert_select "a[href=?]", recipe_path(@recipe2), text: @recipe2.name
   end
 
@@ -31,4 +31,14 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.description, response.body
     assert_match @chef.chefname, response.body
   end
+
+  test "create new valid recipe" do
+    get new_recipe_path
+  end
+
+  test "reject invalid recipe submissions" do
+    get new_recipe_path
+  end
+
+
 end
