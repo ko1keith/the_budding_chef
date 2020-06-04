@@ -6,7 +6,7 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
   # end
 
   def setup
-    @chef = Chef.create!(chefname: "keith", email:"keith@example.com")
+    @chef = Chef.create!(chefname: "keith", email:"keith@example.com", password: "password", password_confirmation: "password")
     @recipe = Recipe.create(name: "Vegie sautee", description:"greate vegie sautee, add vegie and oil", chef: @chef)
   end
 
@@ -29,7 +29,7 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     @recipe.reload
     assert_match updated_name, @recipe.name
-    assert_match updated_description, @recipe.description 
+    assert_match updated_description, @recipe.description
   end
 
 end
