@@ -15,9 +15,10 @@ class ChefsController < ApplicationController
   end
 
   def show
+    @chef = Chef.find(params[:id])
   end
 
-  
+
   private
   def chef_params
     params.require(:chef).permit(:chefname, :email, :password, :password_confirmation)
