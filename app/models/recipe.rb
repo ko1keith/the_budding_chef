@@ -6,4 +6,6 @@ class Recipe < ApplicationRecord
   belongs_to :chef
 
   validates :chef_id, presence: true
+
+  default_scope -> {order(updated_at: :desc)}
 end
