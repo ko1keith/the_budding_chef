@@ -1,0 +1,27 @@
+<%= render 'shared/page_title', title: "Log in" %>
+
+
+<%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+  <div class="row form-group">
+    <%= f.label :email, :class => 'control-label col-md-2' %>
+    <div class="col-md-8">
+      <%= f.email_field :email, class: "form-control", placeholder:"Enter your email" %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <%= f.label :password, :class => 'control-label col-md-2' %>
+    <div class="col-md-8">
+      <%= f.password_field :password, class: "form-control", placeholder:"Enter you password" %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-4">
+      <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-xlarge float-right" %>
+    </div>
+  </div>
+<% end %>
+<div class="col-md-4 offset-md-4 colormatch">
+  [<%= link_to "Cancel request and return to recipes listing", recipes_path %>]
+</div>
