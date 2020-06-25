@@ -16,6 +16,8 @@ class ChefsLoginTest < ActionDispatch::IntegrationTest
     assert_template 'sessions/new'
     #assert flash message from invalid login attempt
     assert_not flash.empty?
+    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", logout_path, count:0
     #get different path and assert flash is not showing
     get root_path
     assert flash.empty?
@@ -30,6 +32,11 @@ class ChefsLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'chefs/show'
     assert_not flash.empty?
+    assert_select "a[href=?]", login_path, count:0
+    assert_select "a[href=?]", logout_path
+    assert_select "a[href=?]", chef_path(@chef)
+    assert_select "a[href=?]", edit_chef_path(@chef)
+
   end
 
 end

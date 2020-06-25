@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery wtih: :exception
 
   #declare helper methods
-  helper_method :current_chef, :logged_in
+  helper_method :current_chef, :logged_in?
 
   #return the chef who is logged in
   def current_chef
     # if chef was already looked for, then return right away, if not, then hit database
-    @current_chef ||= Chef.find(session[:chef_id]) if session[:chef_if]
+    @current_chef ||= Chef.find(session[:chef_id]) if session[:chef_id]
   end
 
   #check if anyone logged in
