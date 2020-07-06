@@ -48,8 +48,8 @@ $navbar: black;
   position: fixed;
   bottom:0px;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 35px;
+  line-height: 35px;
   background-color: teal;
 }
 
@@ -100,4 +100,8 @@ $navbar: black;
   color: teal;
   font-weight: bold;
   font-size: 1.25em;
+}
+
+.input_checkbox input {
+  width: auto !important;
 }
