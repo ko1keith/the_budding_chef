@@ -4,7 +4,7 @@ class CommentTest < ActiveSupport::TestCase
 
     def setup 
         @chef = Chef.create!(chefname: "Keith", email: "keith@gmail.com", password: "password", password_confirmation: "password")
-        @recipe = Recipe.create(name: "Vegie sautee", description:"greate vegie sautee, add vegie and oil", chef: @chef)
+        @recipe = Recipe.create(name: "Vegie sautee", description:"great vegie sautee, add vegie and oil", chef: @chef)
         @comment = Comment.create!(description:"this is a comment", chef: @chef , recipe: @recipe)
     end
 
