@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
             flash[:success] = "Comment was created successfully"
             redirect_to recipe_path(@recipe)
         else
-            flash[:danger] = "Comment was not create"
+            flash[:danger] = "Comment was not created"
             redirect_back(fallback_location: root_path)
         end
     end

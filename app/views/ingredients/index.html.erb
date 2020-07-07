@@ -2,7 +2,9 @@
 
 
 <div class="center">
-  <%= will_paginate %>
+  <div class="paginate_center">
+    <%= will_paginate %>
+  </div>
   <% @ingredients.each do |ing| %>
     <ul class="listing">
       <div class="row">
@@ -16,5 +18,7 @@
       </div>
     </ul>
   <% end %>
-  <%= will_paginate %>
+  <div class="paginate_center">
+    <%= will_paginate %>
+  </div>
 </div>
