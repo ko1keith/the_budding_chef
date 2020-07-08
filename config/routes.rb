@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   #all ingredient routes except destroy
   resources :ingredients, except: [:destroy]
+
+  #set up realtime channels for comments
+  mount ActionCable.server => "/cable"
+  
 end
