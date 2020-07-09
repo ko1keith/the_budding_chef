@@ -18,6 +18,5 @@ module TheBuddingChef
 
     config.action_cable.mount_path = "/cable"
 
-    config.assets.initialize_on_precompile = false
   end
 end
