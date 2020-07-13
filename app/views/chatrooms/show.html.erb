@@ -6,7 +6,14 @@
             <%= render @messages%>
         </div>
     </div>
-
-    <div class="message=container">
+    
+</div>
+<hr />
+<div class="row">
+    <div class="message-container">
+        <%= form_for(@message, :html => {class:"form-horizontal", role: "form"}) do |f| %>
+                <%= f.text_area :content, class:"form-control", placeholder: "Say something!" %>
+                <%= f.submit "Send", class: 'btn btn-primary'%>
+        <% end %>
     </div>
 </div>

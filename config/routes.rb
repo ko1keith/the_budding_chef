@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   #route for chat room
   get '/chat', to: 'chatrooms#show'
   
+  #routes for messages
+  resources :messages, only: [:create]
 end
