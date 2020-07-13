@@ -20,5 +20,8 @@ Rails.application.routes.draw do
 
   #set up realtime channels for comments
   mount ActionCable.server => "/cable"
+
+  #route for chat room
+  get '/chat', to: 'chatrooms#show'
   
 end
