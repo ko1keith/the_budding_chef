@@ -24,3 +24,9 @@ function scrollToBottom(){
 $(document).ready(function(){
   scrollToBottom();
 })
+(function() {
+  jQuery(document).on('turbolinks:load', function() {
+    scrollToBottom();
+  });
+
+})
