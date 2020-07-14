@@ -12,6 +12,6 @@ consumer.subscriptions.create("CommentsChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    return $('#messages').prepend(data);
+    return $('#messages .comment-fix:first').prepend(data);
   }
 });
