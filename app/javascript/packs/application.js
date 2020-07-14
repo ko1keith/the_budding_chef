@@ -23,6 +23,28 @@ function scrollToBottom(){
         $('#messages').scrollTop($('#messages')[0].scrollHeight);
     }
 }
-$(document).ready(function(){
+
+function submitMessage(event){
+    event.preventDefault();
+    $('#new_message').submit();
+}
+
+//on enter key press, submit message
+$(document).on('keypress', '[data-behavior~=room_speaker]', function(event) {
+    if (event.keyCode == 13) { //keycode 13 for enter key
+      submitMessage(event);
+    }
+});
+ 
+ //on mouse click send, submit message
+ $(document).on('click', '[data-send~=message]', function(event) {
+    submitMessage(event);
+ });
+
+ $(document).on('turbolinks:load', function() {
+    $("#new_message").on("ajax:complete", function(e, data, status) {
+      $('#message_content').val('');
+    })
     scrollToBottom();
-})
+});
+  
