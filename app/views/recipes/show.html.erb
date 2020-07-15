@@ -32,15 +32,13 @@
   <div class="row liking">
     <div class="row col-md-8 offset-md-2">
       <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
-        <i class="glyphicon glyphicon-thumbs-up"></i> 
+        <span class="glyphicon glyphicon-thumbs-up"></span> 
       <% end %> ||
       <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
-        <i class="glyphicon glyphicon-thumbs-down"></i> 
+        <span class="glyphicon glyphicon-thumbs-down"></span> 
       <% end %>
     </div>
   </div>
-
-
 </div>
 
 <%# add nested route for comment  %>

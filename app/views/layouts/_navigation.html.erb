@@ -21,9 +21,10 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Recipes
           </a>
+          
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Create a new recipe", new_recipe_path, class: "dropdown-item" %>
             <a class="dropdown-item" href="#">Another action</a>
@@ -47,13 +48,6 @@
             <%= link_to "New Ingredient", new_ingredient_path, class: "dropdown-item"%>
             <% end %>
         </div>
-      </li>
-
-      <li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </li>
     </ul>
 
