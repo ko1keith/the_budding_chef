@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :comments, only: [:create] #only route expose for comments is create
+    member do
+      post 'like'
+    end
   end
 
   get '/signup', to: 'chefs#new'
@@ -26,4 +29,6 @@ Rails.application.routes.draw do
   
   #routes for messages
   resources :messages, only: [:create]
+
+
 end
