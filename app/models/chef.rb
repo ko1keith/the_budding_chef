@@ -17,4 +17,6 @@ class Chef < ApplicationRecord
   has_many :comments, dependent: :destroy # if chef deleted, comments deleted as well
 
   has_many :messages, dependent: :destroy
+
+  has_many :likes, dependent: :destroy
 end
